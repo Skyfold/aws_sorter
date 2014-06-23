@@ -35,7 +35,7 @@ package body Text_Input_CB is
       if Text = "" then
          return AWS.Response.Build
            ("text/html", "<html><body>"
-              & ""
+              & "<p> Write a list delimited by commas containing what you want to sort.</p>"
               & "<form>"
               & "<textarea rows=""1"" name=""text"" cols=""10""></textarea>"
               & "<br><input type=""Submit"">"
