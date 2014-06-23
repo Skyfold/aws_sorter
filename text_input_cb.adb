@@ -34,17 +34,18 @@ package body Text_Input_CB is
       if Text = "" then
          return AWS.Response.Build
            ("text/html", "<html><body>"
+              & ""
               & "<form>"
-              & "<textarea rows=""7"" name=""text"" cols=""48""></textarea>"
+              & "<textarea rows=""1"" name=""text"" cols=""10""></textarea>"
               & "<br><input type=""Submit"">"
               & "</form></body></html>");
       end if;
 
-      AWS.Log.Write (Text_Log, Request, Text);
+
 
       return AWS.Response.Build
         ("text/html", "<html><body>"
-           & "<p>Thanks for you comment <br><pre>"
+           & "<p> Here is you sorted list <br><pre>"
            & Text & "</pre>"
            & "<form>"
            & "<input type=""Submit"" value=""Back"">"
