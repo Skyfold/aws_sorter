@@ -2,7 +2,7 @@ package sorter is
 
    type number_array is array (Positive range <>) of Integer;
 
-   empty_number_array : constant number_array (2 .. 1);
+   empty_number_array : constant number_array (2 .. 1) := (others => 0);
 
    function merge_sort (numbers : number_array) return number_array;
 

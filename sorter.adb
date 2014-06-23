@@ -17,16 +17,16 @@ package body sorter is
    ------------------
 
    function parse_string (text : String) return number_array is
-      temp : String := "";
    begin
       if text'Length = 0 then return empty_number_array;
       else
-         if text'First = ',' then
-            return Integer'Value (temp)
-              & parse_string (text (text'First + 1 .. text'Length));
-         else
-            temp := temp & text'First;
-            return parse_string (text (text'First + 1 .. text'Length));
+         for i in text'Range loop
+            if text (i) = ',' then
+               return Integer'Value (text (text'First .. i - 1)) & parse_string (text (i + 1 .. text'Last));
+            end if;
+         end loop;
+         return Integer'Value (text) & empty_number_array;
+      end if;
 
    end parse_string;
 
@@ -41,6 +41,7 @@ package body sorter is
       else return Integer'Image (numbers (numbers'First))
            & ", "
            & to_string (numbers (numbers'First + 1 .. numbers'Last));
+      end if;
    end to_string;
 
    ----------
