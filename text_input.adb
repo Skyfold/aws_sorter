@@ -36,8 +36,6 @@ begin
         & Positive'Image (AWS.Default.Server_Port) & ASCII.LF
         & "press Q key if you want me to stop.");
 
-   AWS.Config.Ini.Read (
-
    AWS.Log.Start
      (Text_Input_CB.Text_Log,
       Split           => AWS.Log.Daily,
