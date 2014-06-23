@@ -17,6 +17,7 @@
 ------------------------------------------------------------------------------
 
 with AWS.Parameters;
+with sorter;
 
 package body Text_Input_CB is
 
@@ -41,12 +42,10 @@ package body Text_Input_CB is
               & "</form></body></html>");
       end if;
 
-
-
       return AWS.Response.Build
         ("text/html", "<html><body>"
            & "<p> Here is you sorted list <br><pre>"
-           & Text & "</pre>"
+           & sorter.sort (text) & "</pre>"
            & "<form>"
            & "<input type=""Submit"" value=""Back"">"
            & "</form></body></html>");
