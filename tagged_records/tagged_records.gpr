@@ -1,0 +1,9 @@
+project Tagged_Records is
+
+   for Source_Dirs use ("sources");
+   for Object_Dir use "objects/";
+   for Exec_Dir use "execute/";
+   for Main use ("tagged_records.adb");
+
+end Tagged_Records;
+
